@@ -24,6 +24,7 @@
 		8E5233AC250987F200DEF379 /* ListMoviesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */; };
 		8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */; };
 		8E5233B02509885C00DEF379 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AF2509885C00DEF379 /* User.swift */; };
+		8E5233B4250989C400DEF379 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233B6250989C400DEF379 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMoviesCollectionViewController.xib; sourceTree = "<group>"; };
 		8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		8E5233AF2509885C00DEF379 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8E5233B5250989C400DEF379 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E5233B7250989E200DEF379 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8F23E821843F5EB5A8D5314F /* Pods-iOSMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4084BD07C0E41C84BF7A24 /* Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FF269E77D6BAF3DDA596DF /* Pods-iOSMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp/Pods-iOSMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 		8E52339B2509867A00DEF379 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8E5233B12509891900DEF379 /* Internationalization */,
 				8E44761E250982410021285D /* AppDelegate.swift */,
 				8E44762A250982480021285D /* Assets.xcassets */,
 				8E44762F250982480021285D /* Info.plist */,
@@ -248,6 +252,14 @@
 				8E52339F2509874D00DEF379 /* ShowDetail */,
 			);
 			path = Movie;
+			sourceTree = "<group>";
+		};
+		8E5233B12509891900DEF379 /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				8E5233B6250989C400DEF379 /* Localizable.strings */,
+			);
+			path = Internationalization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +353,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 8E447612250982410021285D;
 			productRefGroup = 8E44761C250982410021285D /* Products */;
@@ -360,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */,
+				8E5233B4250989C400DEF379 /* Localizable.strings in Resources */,
 				8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */,
 				8E44762B250982480021285D /* Assets.xcassets in Resources */,
 				8E5233AC250987F200DEF379 /* ListMoviesCollectionViewController.xib in Resources */,
@@ -541,6 +555,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		8E5233B6250989C400DEF379 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E5233B5250989C400DEF379 /* en */,
+				8E5233B7250989E200DEF379 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -548,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -608,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
