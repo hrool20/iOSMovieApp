@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = UIViewController()
+        let rootViewController = Router.shared.getSignIn()
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         

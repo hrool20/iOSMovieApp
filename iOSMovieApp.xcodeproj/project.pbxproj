@@ -25,6 +25,9 @@
 		8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */; };
 		8E5233B02509885C00DEF379 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AF2509885C00DEF379 /* User.swift */; };
 		8E5233B4250989C400DEF379 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233B6250989C400DEF379 /* Localizable.strings */; };
+		8E5233BB25098C2000DEF379 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233BA25098C2000DEF379 /* Router.swift */; };
+		8E5233BD2509918200DEF379 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233BC2509918200DEF379 /* Colors.xcassets */; };
+		8E5233C0250992C300DEF379 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233BF250992C300DEF379 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		8E5233AF2509885C00DEF379 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E5233B5250989C400DEF379 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E5233B7250989E200DEF379 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E5233BA25098C2000DEF379 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8E5233BC2509918200DEF379 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8E5233BF250992C300DEF379 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F23E821843F5EB5A8D5314F /* Pods-iOSMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4084BD07C0E41C84BF7A24 /* Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FF269E77D6BAF3DDA596DF /* Pods-iOSMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp/Pods-iOSMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +163,9 @@
 				8E5233992509866C00DEF379 /* Extensions */,
 				8E52339B2509867A00DEF379 /* Main */,
 				8E52339C250986A300DEF379 /* Models */,
+				8E5233B825098BFF00DEF379 /* Routers */,
 				8E52339A2509867300DEF379 /* Scenes */,
+				8E5233BE250992B100DEF379 /* Utils */,
 			);
 			path = iOSMovieApp;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 				8E44762F250982480021285D /* Info.plist */,
 				8E447627250982410021285D /* iOSMovieApp.xcdatamodeld */,
 				8E44762C250982480021285D /* LaunchScreen.storyboard */,
+				8E5233BC2509918200DEF379 /* Colors.xcassets */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -260,6 +269,22 @@
 				8E5233B6250989C400DEF379 /* Localizable.strings */,
 			);
 			path = Internationalization;
+			sourceTree = "<group>";
+		};
+		8E5233B825098BFF00DEF379 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				8E5233BA25098C2000DEF379 /* Router.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		8E5233BE250992B100DEF379 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E5233BF250992C300DEF379 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +403,7 @@
 				8E44762B250982480021285D /* Assets.xcassets in Resources */,
 				8E5233AC250987F200DEF379 /* ListMoviesCollectionViewController.xib in Resources */,
 				8E5233A8250987D100DEF379 /* ShowMovieDetailViewController.xib in Resources */,
+				8E5233BD2509918200DEF379 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5233BB25098C2000DEF379 /* Router.swift in Sources */,
 				8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */,
 				8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */,
 				8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */,
@@ -512,6 +539,7 @@
 				8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */,
 				8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */,
 				8E5233B02509885C00DEF379 /* User.swift in Sources */,
+				8E5233C0250992C300DEF379 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
