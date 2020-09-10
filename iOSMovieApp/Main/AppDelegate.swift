@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = Router.shared.getSignIn()
-        window?.rootViewController = rootViewController
+        let navigationController = Router.shared.getDefaultNavigation(rootViewController: rootViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true

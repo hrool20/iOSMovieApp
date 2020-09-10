@@ -8,6 +8,8 @@ target 'iOSMovieApp' do
   pod 'Alamofire', '~> 5.2'
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage', '~> 5.0'
+  pod 'SVProgressHUD'
+  pod 'SwiftyJSON', '~> 4.0'
 
   target 'iOSMovieAppTests' do
     inherit! :search_paths
