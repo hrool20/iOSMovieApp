@@ -30,7 +30,7 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
     
     // MARK: AlertHandlerProtocol
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping (() -> Void)) {
-        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
+        let alertController = getAlertController(style, title, message)
         let okAction = UIAlertAction(title: Constants.Localizable.OK, style: .default) { (_) in
             closure()
         }
@@ -41,7 +41,7 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
     }
     
     func showQuestion(_ style: UIAlertController.Style, title: String?, message: String, yes okTitle: String?, no cancelTitle: String?, closure: @escaping ((Bool) -> Void)) {
-        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
+        let alertController = getAlertController(style, title, message)
         let yesAction = UIAlertAction(title: okTitle ?? Constants.Localizable.YES, style: .destructive) { (_) in
             closure(true)
         }
@@ -54,6 +54,12 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    private func getAlertController(_ style: UIAlertController.Style, _ title: String?, _ message: String) -> UIAlertController {
+        let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)
+        alertController.view.tintColor = .tintColor
+        return alertController
     }
     
     // MARK: HUDHandlerProtocol

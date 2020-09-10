@@ -15,6 +15,7 @@ class ShowMovieDetailViewController: UIViewController {
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var descriptionTextView: UITextView!
     private var navigationBarTintColor: UIColor?
+    private var gradientLayer: CAGradientLayer!
     var movie: Movie!
     
     override func viewDidLoad() {
@@ -23,6 +24,13 @@ class ShowMovieDetailViewController: UIViewController {
         navigationItem.title = Constants.Localizable.MOVIE_DETAIL
         
         navigationBarTintColor = navigationController?.navigationBar.tintColor
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.clear.cgColor,
+            UIColor.tintColor?.cgColor ?? UIColor.clear.cgColor
+        ]
+        gradientLayer.locations = [0.35, 1.3]
+        movieImageView.layer.insertSublayer(gradientLayer, at: 0)
         
         if let url = URL(string: movie.imageUrl) {
             movieImageView.setImage(with: url)
@@ -53,6 +61,14 @@ class ShowMovieDetailViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = nil
         navigationController?.navigationBar.barStyle = .default
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        gradientLayer.frame = movieImageView.bounds
+        movieImageView.layer.cornerRadius = movieImageView.bounds.width / 20
+        movieImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
 
 }

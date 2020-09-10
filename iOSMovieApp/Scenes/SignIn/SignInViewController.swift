@@ -46,7 +46,8 @@ class SignInViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         logoImageView.image = logoImageView.image?.withRenderingMode(.alwaysTemplate)
-        logoImageView.tintColor = .black
+        logoImageView.tintColor = .tintColor
+        signInButton.layer.cornerRadius = signInButton.bounds.height / 2
     }
 
     @IBAction func didSignIn(_ sender: UIButton) {

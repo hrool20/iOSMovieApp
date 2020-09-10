@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,16 +30,26 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llY-pB-CSr">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-kZ-9K8">
+                                    <rect key="frame" x="117" y="174.5" width="180" height="180"/>
+                                    <color key="tintColor" name="TintColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="180" id="2Z1-di-Ngl"/>
+                                        <constraint firstAttribute="height" constant="180" id="u62-me-8b3"/>
+                                    </constraints>
+                                </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Du2-US-Tlg">
                                     <rect key="frame" x="30" y="389.5" width="354" height="83"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="UvC-bM-INb">
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="34"/>
+                                            <color key="textColor" name="TextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-8d-Lgc">
                                             <rect key="frame" x="0.0" y="49" width="354" height="34"/>
+                                            <color key="textColor" name="TextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         </textField>
@@ -46,20 +57,16 @@
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-5D-JCA">
                                     <rect key="frame" x="154.5" y="492.5" width="105" height="44"/>
+                                    <color key="backgroundColor" name="TintColor"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
-                                    <state key="normal" title="Sign In"/>
+                                    <state key="normal" title="Sign In">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="didSignIn:" destination="-1" eventType="touchUpInside" id="lyV-zc-wwK"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-kZ-9K8">
-                                    <rect key="frame" x="117" y="174.5" width="180" height="180"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="180" id="2Z1-di-Ngl"/>
-                                        <constraint firstAttribute="height" constant="180" id="u62-me-8b3"/>
-                                    </constraints>
-                                </imageView>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Du2-US-Tlg" firstAttribute="leading" secondItem="llY-pB-CSr" secondAttribute="leading" constant="30" id="4Z4-kB-LFz"/>
@@ -95,5 +102,11 @@
     </objects>
     <resources>
         <image name="app_logo" width="1200" height="1200"/>
+        <namedColor name="TextColor">
+            <color red="0.13300000131130219" green="0.13300000131130219" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TintColor">
+            <color red="0.13699999451637268" green="0.23100000619888306" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -13,9 +13,13 @@ class Router {
     
     func getDefaultNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.tintColor = .tintColor
         navigationController.navigationBar.barStyle = .default
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.textColor ?? UIColor.black
+        ]
         return navigationController
     }
     
