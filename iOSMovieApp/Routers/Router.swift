@@ -14,7 +14,7 @@ class Router {
     func getDefaultNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.navigationBar.tintColor = .white
-        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.barStyle = .default
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = false
         return navigationController
@@ -22,6 +22,11 @@ class Router {
     
     func getListMovies() -> UIViewController {
         let viewController = ListMoviesCollectionViewController.get()
+        return viewController
+    }
+    
+    func getMovieDetail() -> UIViewController {
+        let viewController = ShowMovieDetailViewController.get()
         return viewController
     }
     

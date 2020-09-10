@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
             
             self.endProgress()
             let listMovies = Router.shared.getListMovies()
-            self.show(listMovies, sender: nil)
+            self.navigationController?.show(listMovies, sender: nil)
         }) { [weak self] (errorMessage) in
             self?.endProgress()
             

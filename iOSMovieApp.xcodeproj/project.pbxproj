@@ -32,6 +32,13 @@
 		8E5233C725099F5D00DEF379 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233C625099F5D00DEF379 /* LoginRepository.swift */; };
 		8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233C925099F8A00DEF379 /* ResponseHelper.swift */; };
 		8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233CB2509B5C100DEF379 /* HUDHandlerProtocol.swift */; };
+		8E5233CE2509BB5F00DEF379 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233CD2509BB5F00DEF379 /* MovieRepository.swift */; };
+		8E5233D02509BECA00DEF379 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233CF2509BECA00DEF379 /* Movie.swift */; };
+		8E5233D32509C00300DEF379 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233D22509C00300DEF379 /* ModelProtocol.swift */; };
+		8E5233D72509C3F900DEF379 /* ListMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233D52509C3F900DEF379 /* ListMovieCollectionViewCell.swift */; };
+		8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */; };
+		8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233D92509CE2100DEF379 /* UIViewExtension.swift */; };
+		8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +93,13 @@
 		8E5233C625099F5D00DEF379 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		8E5233C925099F8A00DEF379 /* ResponseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHelper.swift; sourceTree = "<group>"; };
 		8E5233CB2509B5C100DEF379 /* HUDHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDHandlerProtocol.swift; sourceTree = "<group>"; };
+		8E5233CD2509BB5F00DEF379 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		8E5233CF2509BECA00DEF379 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		8E5233D22509C00300DEF379 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		8E5233D52509C3F900DEF379 /* ListMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		8E5233D92509CE2100DEF379 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		8F23E821843F5EB5A8D5314F /* Pods-iOSMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4084BD07C0E41C84BF7A24 /* Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FF269E77D6BAF3DDA596DF /* Pods-iOSMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp/Pods-iOSMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,7 +214,9 @@
 		8E5233992509866C00DEF379 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */,
 				8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */,
+				8E5233D92509CE2100DEF379 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,11 +233,11 @@
 		8E52339B2509867A00DEF379 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8E5233B12509891900DEF379 /* Internationalization */,
 				8E44761E250982410021285D /* AppDelegate.swift */,
 				8E44762A250982480021285D /* Assets.xcassets */,
 				8E5233BC2509918200DEF379 /* Colors.xcassets */,
 				8E44762F250982480021285D /* Info.plist */,
-				8E5233B12509891900DEF379 /* Internationalization */,
 				8E447627250982410021285D /* iOSMovieApp.xcdatamodeld */,
 				8E44762C250982480021285D /* LaunchScreen.storyboard */,
 			);
@@ -231,7 +247,9 @@
 		8E52339C250986A300DEF379 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E5233D12509BFF900DEF379 /* Base */,
 				8E5233AF2509885C00DEF379 /* User.swift */,
+				8E5233CF2509BECA00DEF379 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +266,7 @@
 		8E52339E2509874300DEF379 /* ListMovies */ = {
 			isa = PBXGroup;
 			children = (
+				8E5233D42509C31E00DEF379 /* Cells */,
 				8E5233A9250987F200DEF379 /* ListMoviesCollectionViewController.swift */,
 				8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */,
 			);
@@ -303,6 +322,7 @@
 			children = (
 				8E5233C825099F6D00DEF379 /* Helper */,
 				8E5233C625099F5D00DEF379 /* LoginRepository.swift */,
+				8E5233CD2509BB5F00DEF379 /* MovieRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -313,6 +333,23 @@
 				8E5233C925099F8A00DEF379 /* ResponseHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8E5233D12509BFF900DEF379 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8E5233D22509C00300DEF379 /* ModelProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8E5233D42509C31E00DEF379 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E5233D52509C3F900DEF379 /* ListMovieCollectionViewCell.swift */,
+				8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +465,7 @@
 				8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */,
 				8E5233B4250989C400DEF379 /* Localizable.strings in Resources */,
 				8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */,
+				8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */,
 				8E44762B250982480021285D /* Assets.xcassets in Resources */,
 				8E5233AC250987F200DEF379 /* ListMoviesCollectionViewController.xib in Resources */,
 				8E5233A8250987D100DEF379 /* ShowMovieDetailViewController.xib in Resources */,
@@ -560,18 +598,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5233BB25098C2000DEF379 /* Router.swift in Sources */,
+				8E5233D32509C00300DEF379 /* ModelProtocol.swift in Sources */,
 				8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */,
+				8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */,
 				8E5233C42509983E00DEF379 /* AlertHandlerProtocol.swift in Sources */,
 				8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */,
+				8E5233CE2509BB5F00DEF379 /* MovieRepository.swift in Sources */,
+				8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */,
 				8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */,
 				8E44761F250982410021285D /* AppDelegate.swift in Sources */,
 				8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */,
 				8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */,
 				8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */,
+				8E5233D72509C3F900DEF379 /* ListMovieCollectionViewCell.swift in Sources */,
 				8E5233C725099F5D00DEF379 /* LoginRepository.swift in Sources */,
 				8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */,
 				8E5233B02509885C00DEF379 /* User.swift in Sources */,
 				8E5233C0250992C300DEF379 /* Constants.swift in Sources */,
+				8E5233D02509BECA00DEF379 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

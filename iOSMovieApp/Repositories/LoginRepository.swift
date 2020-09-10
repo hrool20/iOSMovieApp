@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginRepository {
+final class LoginRepository {
     static let shared = LoginRepository()
     
     func signIn(email: String, password: String, success: @escaping() -> Void, failure: @escaping(String) -> Void) {
