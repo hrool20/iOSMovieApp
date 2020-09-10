@@ -36,6 +36,18 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         listMovies()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = nil
+    }
+    
     private func listMovies() {
         MovieRepository.shared.getMovies(page: page, success: { [weak self] (movies) in
             guard let self = self else { return }
