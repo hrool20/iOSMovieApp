@@ -29,9 +29,10 @@ class ShowMovieDetailViewController: UIViewController {
             UIColor.clear.cgColor,
             UIColor.tintColor?.cgColor ?? UIColor.clear.cgColor
         ]
-        gradientLayer.locations = [0.35, 1.3]
+        gradientLayer.locations = [0.35, 1.1]
         movieImageView.layer.insertSublayer(gradientLayer, at: 0)
         
+        scrollView.delegate = self
         if let url = URL(string: movie.imageUrl) {
             movieImageView.setImage(with: url)
         }
@@ -46,10 +47,8 @@ class ShowMovieDetailViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white
-        ]
         navigationController?.navigationBar.barStyle = .blackTranslucent
+        updateTitledColor(with: 1.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,5 +69,27 @@ class ShowMovieDetailViewController: UIViewController {
         movieImageView.layer.cornerRadius = movieImageView.bounds.width / 20
         movieImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
+    
+    private func updateTitledColor(with alpha: CGFloat) {
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white.withAlphaComponent(alpha)
+        ]
+    }
 
+}
+extension ShowMovieDetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let heightLeft: CGFloat = (movieImageView.bounds.height - scrollView.contentOffset.y > 0) ? movieImageView.bounds.height - scrollView.contentOffset.y : 0
+        let beginning: CGFloat = movieImageView.bounds.height / 2.5
+        
+        let alpha: CGFloat
+        if heightLeft < beginning {
+            alpha = heightLeft / beginning
+        } else if heightLeft == 0 {
+            alpha = 0
+        } else {
+            alpha = 1
+        }
+        updateTitledColor(with: alpha)
+    }
 }
