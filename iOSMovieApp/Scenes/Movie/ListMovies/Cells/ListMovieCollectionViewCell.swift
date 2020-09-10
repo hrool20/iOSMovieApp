@@ -20,6 +20,8 @@ class ListMovieCollectionViewCell: UICollectionViewCell {
                 return
             }
             
+            endShimmerEffect()
+            
             if let url = URL(string: movie.imageUrl) {
                 movieImageView.setImage(with: url) { [weak self] (_) in
                     self?.layoutSubviews()
@@ -45,7 +47,7 @@ class ListMovieCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        startShimmerEffect()
     }
     
     override func layoutSubviews() {
@@ -60,6 +62,30 @@ class ListMovieCollectionViewCell: UICollectionViewCell {
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         layer.shadowOpacity = 0.4
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        startShimmerEffect()
+    }
+    
+    private func startShimmerEffect() {
+        [movieNameLabel].forEach { (view) in
+            view?.isHidden = true
+        }
+        [movieImageView].forEach { (view) in
+            view?.showShimmerEffect()
+        }
+    }
+    
+    private func endShimmerEffect() {
+        [movieNameLabel].forEach { (view) in
+            view?.isHidden = false
+        }
+        [movieImageView].forEach { (view) in
+            view?.hideShimmerEffect()
+        }
     }
     
     func willDisplay() {

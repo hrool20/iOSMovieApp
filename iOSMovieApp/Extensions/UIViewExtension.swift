@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import SkeletonView
 
-extension UIView {
+extension UIView: ShimmerHandlerProtocol {
     private static var NIBName: String {
         return String(describing: self)
     }
@@ -22,5 +23,17 @@ extension UIView {
     
     static func getNIB() -> UINib {
         return UINib(nibName: self.NIBName, bundle: nil)
+    }
+    
+    // MARK: - ShimmerViewHandler
+    func hideShimmerEffect() {
+        self.hideSkeleton(reloadDataAfter: true, transition: transitionDurationHiding)
+    }
+    
+    func showShimmerEffect(firstColor: UIColor, secondColor: UIColor?, andDuration duration: Double) {
+        let gradient = SkeletonGradient(baseColor: firstColor, secondaryColor: secondColor)
+        let animation = SkeletonAnimationBuilder().makeSlidingAnimation(withDirection: animationDirection, duration: duration)
+        self.isSkeletonable = true
+        self.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation, transition: transitionDurationShowing)
     }
 }

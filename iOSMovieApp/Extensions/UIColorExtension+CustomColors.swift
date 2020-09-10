@@ -30,6 +30,9 @@ extension UIColor {
     static var secondLightColor: UIColor? {
         return UIColor(named: "SecondLightColor")
     }
+    static var shimmerEffectColor: UIColor? {
+        return UIColor(named: "ShimmerEffectColor")
+    }
     static var textColor: UIColor? {
         return UIColor(named: "TextColor")
     }

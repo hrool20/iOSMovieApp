@@ -34,7 +34,6 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         collectionView.register(ListMovieCollectionViewCell.getNIB(), forCellWithReuseIdentifier: reuseIdentifier)
         
         setNavigationItems()
-        listMovies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +41,8 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        listMovies()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,7 +100,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies?.count ?? 4
+        return movies?.count ?? 9
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -125,6 +126,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         guard willFecth && indexPath.row == count - Int(numberOfColumns) else {
             return
         }
+        print("##PG: \(page)")
         page += 1
         willFecth = false
         listMovies()

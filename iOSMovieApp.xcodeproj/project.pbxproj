@@ -21,6 +21,7 @@
 		8E47304B250A9BDF007D0DD0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47304A250A9BDF007D0DD0 /* UIColorExtension.swift */; };
 		8E47304F250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */; };
 		8E473051250AAE11007D0DD0 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E473050250AAE11007D0DD0 /* UIImageExtension.swift */; };
+		8E473053250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E473052250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift */; };
 		8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233A1250987B700DEF379 /* SignInViewController.swift */; };
 		8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233A2250987B700DEF379 /* SignInViewController.xib */; };
 		8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233A5250987D100DEF379 /* ShowMovieDetailViewController.swift */; };
@@ -85,6 +86,7 @@
 		8E47304A250A9BDF007D0DD0 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColorExtension+CustomColors.swift"; sourceTree = "<group>"; };
 		8E473050250AAE11007D0DD0 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		8E473052250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E5233A1250987B700DEF379 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8E5233A2250987B700DEF379 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		8E5233A5250987D100DEF379 /* ShowMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				8E5233C32509983E00DEF379 /* AlertHandlerProtocol.swift */,
 				8E5233BF250992C300DEF379 /* Constants.swift */,
 				8E5233CB2509B5C100DEF379 /* HUDHandlerProtocol.swift */,
+				8E473052250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				8E47304B250A9BDF007D0DD0 /* UIColorExtension.swift in Sources */,
 				8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */,
 				8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */,
+				8E473053250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift in Sources */,
 				8E44761F250982410021285D /* AppDelegate.swift in Sources */,
 				8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */,
 				8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */,
