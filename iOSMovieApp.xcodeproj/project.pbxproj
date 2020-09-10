@@ -23,7 +23,6 @@
 		8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233A9250987F200DEF379 /* ListMoviesCollectionViewController.swift */; };
 		8E5233AC250987F200DEF379 /* ListMoviesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */; };
 		8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */; };
-		8E5233B02509885C00DEF379 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233AF2509885C00DEF379 /* User.swift */; };
 		8E5233B4250989C400DEF379 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233B6250989C400DEF379 /* Localizable.strings */; };
 		8E5233BB25098C2000DEF379 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233BA25098C2000DEF379 /* Router.swift */; };
 		8E5233BD2509918200DEF379 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233BC2509918200DEF379 /* Colors.xcassets */; };
@@ -83,7 +82,6 @@
 		8E5233A9250987F200DEF379 /* ListMoviesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesCollectionViewController.swift; sourceTree = "<group>"; };
 		8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMoviesCollectionViewController.xib; sourceTree = "<group>"; };
 		8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		8E5233AF2509885C00DEF379 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E5233B5250989C400DEF379 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8E5233B7250989E200DEF379 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8E5233BA25098C2000DEF379 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				8E5233D12509BFF900DEF379 /* Base */,
-				8E5233AF2509885C00DEF379 /* User.swift */,
 				8E5233CF2509BECA00DEF379 /* Movie.swift */,
 			);
 			path = Models;
@@ -613,7 +610,6 @@
 				8E5233D72509C3F900DEF379 /* ListMovieCollectionViewCell.swift in Sources */,
 				8E5233C725099F5D00DEF379 /* LoginRepository.swift in Sources */,
 				8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */,
-				8E5233B02509885C00DEF379 /* User.swift in Sources */,
 				8E5233C0250992C300DEF379 /* Constants.swift in Sources */,
 				8E5233D02509BECA00DEF379 /* Movie.swift in Sources */,
 			);

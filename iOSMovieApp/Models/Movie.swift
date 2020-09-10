@@ -25,6 +25,6 @@ class Movie: ModelProtocol {
         self.init(id: jsonObject["id"].intValue,
                   title: jsonObject["detail"]["title"].stringValue,
                   description: jsonObject["detail"]["description"].stringValue,
-                  imageUrl: jsonObject["imageUrl"].stringValue)
+                  imageUrl: jsonObject["detail"]["img"].stringValue)
     }
 }

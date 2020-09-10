@@ -9,10 +9,12 @@ import UIKit
 
 class ShowMovieDetailViewController: UIViewController {
 
+    var movie: Movie!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.title = Constants.Localizable.MOVIE_DETAIL
     }
 
 

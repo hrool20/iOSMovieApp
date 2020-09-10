@@ -18,6 +18,7 @@ struct Constants {
         static let EMAIL = NSLocalizedString("Email", comment: "")
         static let EMAIL_NOT_VALID = NSLocalizedString("Email field is not valid", comment: "")
         static let MOVIES = NSLocalizedString("Movies", comment: "")
+        static let MOVIE_DETAIL = NSLocalizedString("Movie detail", comment: "")
         static let NO = NSLocalizedString("No", comment: "")
         static let OK = NSLocalizedString("Ok", comment: "")
         static let PASSWORD = NSLocalizedString("Password", comment: "")
