@@ -10,6 +10,7 @@ import UIKit
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -40,6 +41,13 @@ class SignInViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.isTranslucent = false
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        logoImageView.image = logoImageView.image?.withRenderingMode(.alwaysTemplate)
+        logoImageView.tintColor = .black
+    }
 
     @IBAction func didSignIn(_ sender: UIButton) {
         guard let email = emailTextField.text, !email.isEmpty else {
@@ -60,7 +68,8 @@ class SignInViewController: UIViewController {
             
             self.endProgress()
             let listMovies = Router.shared.getListMovies()
-            self.navigationController?.show(listMovies, sender: nil)
+            let navigationController = Router.shared.getDefaultNavigation(rootViewController: listMovies)
+            self.start([.transitionFlipFromLeft], to: navigationController)
         }) { [weak self] (errorMessage) in
             self?.endProgress()
             

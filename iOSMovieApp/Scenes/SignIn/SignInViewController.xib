@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="iOSMovieApp" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="UvC-bM-INb" id="B5s-mE-UQb"/>
+                <outlet property="logoImageView" destination="UJk-kZ-9K8" id="cuh-49-XoR"/>
                 <outlet property="passwordTextField" destination="fdK-8d-Lgc" id="V45-gn-AEo"/>
                 <outlet property="scrollView" destination="Zjc-tv-gPi" id="ZXb-Po-aj9"/>
                 <outlet property="signInButton" destination="Xhz-5D-JCA" id="zB6-sq-LbI"/>
@@ -52,11 +53,20 @@
                                         <action selector="didSignIn:" destination="-1" eventType="touchUpInside" id="lyV-zc-wwK"/>
                                     </connections>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-kZ-9K8">
+                                    <rect key="frame" x="117" y="174.5" width="180" height="180"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="180" id="2Z1-di-Ngl"/>
+                                        <constraint firstAttribute="height" constant="180" id="u62-me-8b3"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Du2-US-Tlg" firstAttribute="leading" secondItem="llY-pB-CSr" secondAttribute="leading" constant="30" id="4Z4-kB-LFz"/>
                                 <constraint firstItem="Du2-US-Tlg" firstAttribute="centerY" secondItem="llY-pB-CSr" secondAttribute="centerY" id="7fj-D8-GFH"/>
+                                <constraint firstItem="UJk-kZ-9K8" firstAttribute="centerX" secondItem="llY-pB-CSr" secondAttribute="centerX" id="Feo-Il-6Db"/>
                                 <constraint firstAttribute="trailing" secondItem="Du2-US-Tlg" secondAttribute="trailing" constant="30" id="RyR-U5-5ke"/>
+                                <constraint firstItem="Du2-US-Tlg" firstAttribute="top" secondItem="UJk-kZ-9K8" secondAttribute="bottom" constant="35" id="VxC-7S-502"/>
                                 <constraint firstItem="Xhz-5D-JCA" firstAttribute="top" secondItem="Du2-US-Tlg" secondAttribute="bottom" constant="20" id="Xrp-6p-QBs"/>
                                 <constraint firstItem="Xhz-5D-JCA" firstAttribute="centerX" secondItem="llY-pB-CSr" secondAttribute="centerX" id="bCW-nQ-uaH"/>
                             </constraints>
@@ -83,4 +93,7 @@
             <point key="canvasLocation" x="139" y="145"/>
         </view>
     </objects>
+    <resources>
+        <image name="app_logo" width="1200" height="1200"/>
+    </resources>
 </document>

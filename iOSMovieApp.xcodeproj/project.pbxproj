@@ -16,6 +16,11 @@
 		8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E44762C250982480021285D /* LaunchScreen.storyboard */; };
 		8E447639250982480021285D /* iOSMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E447638250982480021285D /* iOSMovieAppTests.swift */; };
 		8E447644250982480021285D /* iOSMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E447643250982480021285D /* iOSMovieAppUITests.swift */; };
+		8E473048250A96D4007D0DD0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E473046250A96D4007D0DD0 /* SplashViewController.swift */; };
+		8E473049250A96D4007D0DD0 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E473047250A96D4007D0DD0 /* SplashViewController.xib */; };
+		8E47304B250A9BDF007D0DD0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47304A250A9BDF007D0DD0 /* UIColorExtension.swift */; };
+		8E47304F250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */; };
+		8E473051250AAE11007D0DD0 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E473050250AAE11007D0DD0 /* UIImageExtension.swift */; };
 		8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233A1250987B700DEF379 /* SignInViewController.swift */; };
 		8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233A2250987B700DEF379 /* SignInViewController.xib */; };
 		8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233A5250987D100DEF379 /* ShowMovieDetailViewController.swift */; };
@@ -75,6 +80,11 @@
 		8E44763F250982480021285D /* iOSMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E447643250982480021285D /* iOSMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMovieAppUITests.swift; sourceTree = "<group>"; };
 		8E447645250982480021285D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E473046250A96D4007D0DD0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8E473047250A96D4007D0DD0 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		8E47304A250A9BDF007D0DD0 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColorExtension+CustomColors.swift"; sourceTree = "<group>"; };
+		8E473050250AAE11007D0DD0 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		8E5233A1250987B700DEF379 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8E5233A2250987B700DEF379 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		8E5233A5250987D100DEF379 /* ShowMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -209,9 +219,21 @@
 			path = iOSMovieAppUITests;
 			sourceTree = "<group>";
 		};
+		8E473045250A96C0007D0DD0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8E473046250A96D4007D0DD0 /* SplashViewController.swift */,
+				8E473047250A96D4007D0DD0 /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		8E5233992509866C00DEF379 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E47304A250A9BDF007D0DD0 /* UIColorExtension.swift */,
+				8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */,
+				8E473050250AAE11007D0DD0 /* UIImageExtension.swift */,
 				8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */,
 				8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */,
 				8E5233D92509CE2100DEF379 /* UIViewExtension.swift */,
@@ -224,6 +246,7 @@
 			children = (
 				8E5233A02509876500DEF379 /* Movie */,
 				8E52339D2509873A00DEF379 /* SignIn */,
+				8E473045250A96C0007D0DD0 /* Splash */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -460,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */,
+				8E473049250A96D4007D0DD0 /* SplashViewController.xib in Resources */,
 				8E5233B4250989C400DEF379 /* Localizable.strings in Resources */,
 				8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */,
 				8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */,
@@ -597,17 +621,21 @@
 				8E5233BB25098C2000DEF379 /* Router.swift in Sources */,
 				8E5233D32509C00300DEF379 /* ModelProtocol.swift in Sources */,
 				8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */,
+				8E47304F250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift in Sources */,
 				8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */,
 				8E5233C42509983E00DEF379 /* AlertHandlerProtocol.swift in Sources */,
 				8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */,
 				8E5233CE2509BB5F00DEF379 /* MovieRepository.swift in Sources */,
+				8E47304B250A9BDF007D0DD0 /* UIColorExtension.swift in Sources */,
 				8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */,
 				8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */,
 				8E44761F250982410021285D /* AppDelegate.swift in Sources */,
 				8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */,
 				8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */,
 				8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */,
+				8E473051250AAE11007D0DD0 /* UIImageExtension.swift in Sources */,
 				8E5233D72509C3F900DEF379 /* ListMovieCollectionViewCell.swift in Sources */,
+				8E473048250A96D4007D0DD0 /* SplashViewController.swift in Sources */,
 				8E5233C725099F5D00DEF379 /* LoginRepository.swift in Sources */,
 				8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */,
 				8E5233C0250992C300DEF379 /* Constants.swift in Sources */,

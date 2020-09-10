@@ -34,4 +34,9 @@ class Router {
         let viewController = SignInViewController.get()
         return viewController
     }
+    
+    func getSplash() -> UIViewController {
+        let viewController = SplashViewController.get()
+        return viewController
+    }
 }

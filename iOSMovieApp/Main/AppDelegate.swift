@@ -19,9 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = Router.shared.getSignIn()
-        let navigationController = Router.shared.getDefaultNavigation(rootViewController: rootViewController)
-        window?.rootViewController = navigationController
+        let rootViewController = Router.shared.getSplash()
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
         return true

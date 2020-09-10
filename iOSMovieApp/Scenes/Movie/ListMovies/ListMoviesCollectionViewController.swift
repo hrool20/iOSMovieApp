@@ -33,19 +33,41 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         
         collectionView.register(ListMovieCollectionViewCell.getNIB(), forCellWithReuseIdentifier: reuseIdentifier)
         
+        setNavigationItems()
         listMovies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.topItem?.backBarButtonItem = nil
+    }
+    
+    private func setNavigationItems() {
+        let size = CGSize(width: 30, height: 30)
+        
+        let signOutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout").resizeImage(with: size), style: .plain, target: self, action: #selector(didSignOut))
+        navigationItem.setRightBarButtonItems([
+            signOutItem
+        ], animated: true)
+    }
+    
+    @objc private func didSignOut() {
+        showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] (isSuccessful) in
+            guard let self = self, isSuccessful else { return }
+            
+            UserDefaults.standard.removeObject(forKey: Constants.Keys.TOKEN)
+            let signIn = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getSignIn())
+            self.start([.transitionFlipFromRight], to: signIn)
+        }
     }
     
     private func listMovies() {

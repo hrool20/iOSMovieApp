@@ -18,6 +18,16 @@ extension UIViewController: AlertHandlerProtocol, HUDHandlerProtocol {
         return Self(nibName: NIBName, bundle: bundle)
     }
     
+    // MARK: Transition between viewControllers
+    func start(_ transition: UIView.AnimationOptions, to viewController: UIViewController, duration: TimeInterval = 0.6) {
+        guard let window = UIApplication.shared.keyWindow else {
+            fatalError()
+        }
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: duration, options: transition, animations: nil, completion: nil)
+    }
+    
     // MARK: AlertHandlerProtocol
     func show(_ style: UIAlertController.Style, title: String?, message: String, closure: @escaping (() -> Void)) {
         let alertController = UIAlertController(title: title ?? Constants.Localizable.APP_NAME, message: message, preferredStyle: style)

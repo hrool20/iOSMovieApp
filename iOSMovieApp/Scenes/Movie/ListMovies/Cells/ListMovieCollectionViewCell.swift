@@ -2,7 +2,6 @@
 //  ListMovieCollectionViewCell.swift
 //  iOSMovieApp
 //
-//  Created by Hugo Andres Rosado on 9/9/20.
 //  Copyright © 2020 Hrool. All rights reserved.
 //
 
@@ -52,7 +51,9 @@ class ListMovieCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        movieImageView.layer.cornerRadius = 10
+        [self, movieImageView].forEach { (view) in
+            view?.layer.cornerRadius = 10
+        }
         layer.masksToBounds = false
         layer.cornerRadius = bounds.height / 15
         layer.shadowRadius = 4.0
