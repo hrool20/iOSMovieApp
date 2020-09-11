@@ -52,7 +52,7 @@ final class Router {
     
     func getSignIn() -> UIViewController {
         let viewController = SignInViewController.get()
-        viewController.loginRepository = loginRepository
+        viewController.signInPresenter = SignInPresenter(loginRepository: loginRepository, view: viewController)
         return viewController
     }
     

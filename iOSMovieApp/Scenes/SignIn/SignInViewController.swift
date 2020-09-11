@@ -14,7 +14,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    var loginRepository: LoginRepository!
+    var signInPresenter: SignInPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,31 +49,14 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func didSignIn(_ sender: UIButton) {
-        guard let email = emailTextField.text, !email.isEmpty else {
-            show(.alert, message: Constants.Localizable.EMAIL_NOT_VALID)
-            return
-        }
-        guard let password = passwordTextField.text, !password.isEmpty else {
-            show(.alert, message: Constants.Localizable.PASSWORD_NOT_VALID)
-            return
-        }
-        
-        startProgress()
-        
-        loginRepository.signIn(email: email,
-                                      password: password,
-        success: { [weak self] in
-            guard let self = self else { return }
-            
-            self.endProgress()
-            let listMovies = Router.shared.getListMovies()
-            let navigationController = Router.shared.getDefaultNavigation(rootViewController: listMovies)
-            self.start([.transitionFlipFromLeft], to: navigationController)
-        }) { [weak self] (errorMessage) in
-            self?.endProgress()
-            
-            self?.show(.alert, message: errorMessage)
-        }
+        signInPresenter.signIn(email: emailTextField.text, password: passwordTextField.text)
     }
 
+}
+extension SignInViewController: SignInViewControllerProtocol {
+    func showListMovies() {
+        let listMovies = Router.shared.getListMovies()
+        let navigationController = Router.shared.getDefaultNavigation(rootViewController: listMovies)
+        start([.transitionFlipFromLeft], to: navigationController)
+    }
 }
