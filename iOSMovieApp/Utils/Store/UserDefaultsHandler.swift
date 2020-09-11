@@ -8,7 +8,7 @@
 import Foundation
 
 final class UserDefaultsHandler: StoreHandlerProtocol {
-    let userDefaults: UserDefaults
+    private let userDefaults: UserDefaults
     
     init() {
         userDefaults = .standard

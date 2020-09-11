@@ -14,7 +14,6 @@
 		8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E447627250982410021285D /* iOSMovieApp.xcdatamodeld */; };
 		8E44762B250982480021285D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E44762A250982480021285D /* Assets.xcassets */; };
 		8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E44762C250982480021285D /* LaunchScreen.storyboard */; };
-		8E447639250982480021285D /* iOSMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E447638250982480021285D /* iOSMovieAppTests.swift */; };
 		8E447644250982480021285D /* iOSMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E447643250982480021285D /* iOSMovieAppUITests.swift */; };
 		8E473048250A96D4007D0DD0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E473046250A96D4007D0DD0 /* SplashViewController.swift */; };
 		8E473049250A96D4007D0DD0 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E473047250A96D4007D0DD0 /* SplashViewController.xib */; };
@@ -84,7 +83,6 @@
 		8E44762D250982480021285D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E44762F250982480021285D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E447634250982480021285D /* iOSMovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E447638250982480021285D /* iOSMovieAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMovieAppTests.swift; sourceTree = "<group>"; };
 		8E44763A250982480021285D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E44763F250982480021285D /* iOSMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E447643250982480021285D /* iOSMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMovieAppUITests.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				8E5F6890250B120F0063B754 /* Repositories */,
-				8E447638250982480021285D /* iOSMovieAppTests.swift */,
 				8E44763A250982480021285D /* Info.plist */,
 				8E5F6895250B188D0063B754 /* RouterMock.swift */,
 			);
@@ -698,7 +695,6 @@
 			files = (
 				8E5F6898250B21870063B754 /* MovieRepositoryTests.swift in Sources */,
 				8E5F6896250B188D0063B754 /* RouterMock.swift in Sources */,
-				8E447639250982480021285D /* iOSMovieAppTests.swift in Sources */,
 				8E5F6894250B13630063B754 /* LoginRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

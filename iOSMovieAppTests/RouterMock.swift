@@ -2,7 +2,6 @@
 //  RouterMock.swift
 //  iOSMovieAppTests
 //
-//  Created by Hugo Andres Rosado on 9/10/20.
 //  Copyright © 2020 Hrool. All rights reserved.
 //
 

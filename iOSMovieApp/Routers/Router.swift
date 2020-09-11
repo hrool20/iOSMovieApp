@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Router {
+final class Router {
     static let shared = Router()
     // Handlers
     private let keychainHandler: StoreHandlerProtocol

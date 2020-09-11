@@ -7,8 +7,8 @@
 
 import Foundation
 
-class MovieRepository {
-    let keychainHandler: StoreHandlerProtocol
+final class MovieRepository {
+    private let keychainHandler: StoreHandlerProtocol
     
     init(keychainHandler: StoreHandlerProtocol) {
         self.keychainHandler = keychainHandler
