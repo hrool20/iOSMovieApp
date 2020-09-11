@@ -15,6 +15,7 @@ class ShowMovieDetailViewController: UIViewController {
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var descriptionTextView: UITextView!
     private var gradientLayer: CAGradientLayer!
+    var showDetailPresenter: ShowMovieDetailPresenterProtocol!
     var movie: Movie!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -25,8 +26,7 @@ class ShowMovieDetailViewController: UIViewController {
 
         navigationItem.title = Constants.Localizable.MOVIE_DETAIL
         
-        gradientLayer = CAGradientLayer()
-        gradientLayer.locations = [0.35, 1.1]
+        gradientLayer = showDetailPresenter.getGradientLayer()
         movieImageView.layer.insertSublayer(gradientLayer, at: 0)
         
         scrollView.delegate = self
@@ -43,7 +43,7 @@ class ShowMovieDetailViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
-        updateTitleColor(with: 1.0)
+        updateTitleColor(1.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,35 +58,24 @@ class ShowMovieDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        gradientLayer.colors = [
-            UIColor.clear.cgColor,
-            UIColor.tintColor?.cgColor ?? UIColor.clear.cgColor
-        ]
+        gradientLayer.colors = showDetailPresenter.getGradientLayerColors()
         gradientLayer.frame = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: movieImageView.bounds.height))
         movieImageView.layer.cornerRadius = movieImageView.bounds.width / 20
         movieImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    private func updateTitleColor(with alpha: CGFloat) {
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white.withAlphaComponent(alpha)
-        ]
+    // MARK: UIScrollViewDelegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        showDetailPresenter.updateTitleColor(headerHeight: movieImageView.bounds.height, scrollViewY: scrollView.contentOffset.y)
     }
 
 }
-extension ShowMovieDetailViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let heightLeft: CGFloat = (movieImageView.bounds.height - scrollView.contentOffset.y > 0) ? movieImageView.bounds.height - scrollView.contentOffset.y : 0
-        let beginning: CGFloat = movieImageView.bounds.height / 2.5
-        
-        let alpha: CGFloat
-        if heightLeft < beginning {
-            alpha = heightLeft / beginning
-        } else if heightLeft == 0 {
-            alpha = 0
-        } else {
-            alpha = 1
-        }
-        updateTitleColor(with: alpha)
+extension ShowMovieDetailViewController: UIScrollViewDelegate {}
+extension ShowMovieDetailViewController: ShowMovieDetailViewControllerProtocol {
+    func updateTitleColor(_ alpha: CGFloat) {
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white.withAlphaComponent(alpha)
+        ]
     }
 }

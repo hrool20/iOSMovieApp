@@ -47,6 +47,7 @@ final class Router {
     func getMovieDetail(movie: Movie) -> UIViewController {
         let viewController = ShowMovieDetailViewController.get()
         viewController.movie = movie
+        viewController.showDetailPresenter = ShowMovieDetailPresenter(view: viewController)
         return viewController
     }
     

@@ -53,6 +53,9 @@
 		8E5F68A2250B3EB80063B754 /* SignInPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68A1250B3EB80063B754 /* SignInPresenterProtocol.swift */; };
 		8E5F68A4250B3EDB0063B754 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68A3250B3EDB0063B754 /* SignInPresenter.swift */; };
 		8E5F68A6250B3F0B0063B754 /* SignInViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68A5250B3F0B0063B754 /* SignInViewControllerProtocol.swift */; };
+		8E5F68A8250B42670063B754 /* ShowMovieDetailPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68A7250B42670063B754 /* ShowMovieDetailPresenterProtocol.swift */; };
+		8E5F68AA250B42850063B754 /* ShowMovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68A9250B42850063B754 /* ShowMovieDetailPresenter.swift */; };
+		8E5F68AC250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F68AB250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift */; };
 		8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */; };
 		8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */; };
 		8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD69250B073900331F1B /* KeychainHandler.swift */; };
@@ -132,6 +135,9 @@
 		8E5F68A1250B3EB80063B754 /* SignInPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenterProtocol.swift; sourceTree = "<group>"; };
 		8E5F68A3250B3EDB0063B754 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		8E5F68A5250B3F0B0063B754 /* SignInViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8E5F68A7250B42670063B754 /* ShowMovieDetailPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMovieDetailPresenterProtocol.swift; sourceTree = "<group>"; };
+		8E5F68A9250B42850063B754 /* ShowMovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMovieDetailPresenter.swift; sourceTree = "<group>"; };
+		8E5F68AB250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMovieDetailViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD69250B073900331F1B /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
@@ -333,8 +339,11 @@
 		8E52339F2509874D00DEF379 /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8E5F68A9250B42850063B754 /* ShowMovieDetailPresenter.swift */,
+				8E5F68A7250B42670063B754 /* ShowMovieDetailPresenterProtocol.swift */,
 				8E5233A5250987D100DEF379 /* ShowMovieDetailViewController.swift */,
 				8E5233A6250987D100DEF379 /* ShowMovieDetailViewController.xib */,
+				8E5F68AB250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift */,
 			);
 			path = ShowDetail;
 			sourceTree = "<group>";
@@ -685,6 +694,7 @@
 				8E47304F250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift in Sources */,
 				8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */,
 				8E5F68A0250B3B410063B754 /* SplashViewControllerProtocol.swift in Sources */,
+				8E5F68A8250B42670063B754 /* ShowMovieDetailPresenterProtocol.swift in Sources */,
 				8E5F68A2250B3EB80063B754 /* SignInPresenterProtocol.swift in Sources */,
 				8E5233C42509983E00DEF379 /* AlertHandlerProtocol.swift in Sources */,
 				8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */,
@@ -698,8 +708,10 @@
 				8E473053250ACFF8007D0DD0 /* ShimmerHandlerProtocol.swift in Sources */,
 				8E44761F250982410021285D /* AppDelegate.swift in Sources */,
 				8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */,
+				8E5F68AC250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift in Sources */,
 				8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */,
 				8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */,
+				8E5F68AA250B42850063B754 /* ShowMovieDetailPresenter.swift in Sources */,
 				8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */,
 				8E473051250AAE11007D0DD0 /* UIImageExtension.swift in Sources */,
 				8E5233D72509C3F900DEF379 /* ListMovieCollectionViewCell.swift in Sources */,
