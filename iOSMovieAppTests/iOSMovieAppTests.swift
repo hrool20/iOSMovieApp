@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import iOSMovieApp
+@testable import Movie_App
 
 class iOSMovieAppTests: XCTestCase {
 
