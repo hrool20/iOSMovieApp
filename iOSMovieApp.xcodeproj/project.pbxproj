@@ -47,6 +47,7 @@
 		8E5F6894250B13630063B754 /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6893250B13630063B754 /* LoginRepositoryTests.swift */; };
 		8E5F6896250B188D0063B754 /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6895250B188D0063B754 /* RouterMock.swift */; };
 		8E5F6898250B21870063B754 /* MovieRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */; };
+		8E5F689A250B2ED20063B754 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E5F6899250B2ED20063B754 /* README.md */; };
 		8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */; };
 		8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */; };
 		8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD69250B073900331F1B /* KeychainHandler.swift */; };
@@ -120,6 +121,7 @@
 		8E5F6893250B13630063B754 /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
 		8E5F6895250B188D0063B754 /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
 		8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositoryTests.swift; sourceTree = "<group>"; };
+		8E5F6899250B2ED20063B754 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD69250B073900331F1B /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				8E44761C250982410021285D /* Products */,
 				39D262D0E80C5407D8846387 /* Pods */,
 				12C6F0D1A78901E8338A9B15 /* Frameworks */,
+				8E5F6899250B2ED20063B754 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -524,6 +527,7 @@
 			files = (
 				8E44762E250982480021285D /* LaunchScreen.storyboard in Resources */,
 				8E473049250A96D4007D0DD0 /* SplashViewController.xib in Resources */,
+				8E5F689A250B2ED20063B754 /* README.md in Resources */,
 				8E5233B4250989C400DEF379 /* Localizable.strings in Resources */,
 				8E5233A4250987B700DEF379 /* SignInViewController.xib in Resources */,
 				8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */,
