@@ -10,6 +10,20 @@ import UIKit
 
 class Router {
     static let shared = Router()
+    // Handlers
+    private let keychainHandler: StoreHandlerProtocol
+    private let userDefaultsHandler: StoreHandlerProtocol
+    // Repositories
+    private var loginRepository: LoginRepository
+    private var movieRepository: MovieRepository
+    
+    init() {
+        keychainHandler = KeychainHandler()
+        userDefaultsHandler = UserDefaultsHandler()
+        
+        loginRepository = LoginRepository(keychainHandler: keychainHandler)
+        movieRepository = MovieRepository(keychainHandler: keychainHandler)
+    }
     
     func getDefaultNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
@@ -25,6 +39,8 @@ class Router {
     
     func getListMovies() -> UIViewController {
         let viewController = ListMoviesCollectionViewController.get()
+        viewController.movieRepository = movieRepository
+        viewController.keychainHandler = keychainHandler
         return viewController
     }
     
@@ -36,11 +52,14 @@ class Router {
     
     func getSignIn() -> UIViewController {
         let viewController = SignInViewController.get()
+        viewController.loginRepository = loginRepository
         return viewController
     }
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
+        viewController.keychainHandler = keychainHandler
+        viewController.userDefaultsHandler = userDefaultsHandler
         return viewController
     }
 }

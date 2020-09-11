@@ -15,6 +15,8 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     private var page: Int!
     private var willFecth: Bool!
     private var flowLayout: UICollectionViewFlowLayout!
+    var movieRepository: MovieRepository!
+    var keychainHandler: StoreHandlerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,15 +80,14 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     @objc private func didSignOut() {
         showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] (isSuccessful) in
             guard let self = self, isSuccessful else { return }
-            
-            UserDefaults.standard.removeObject(forKey: Constants.Keys.TOKEN)
+            _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)
             let signIn = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getSignIn())
             self.start([.transitionFlipFromRight], to: signIn)
         }
     }
     
     private func listMovies() {
-        MovieRepository.shared.getMovies(page: page, success: { [weak self] (movies) in
+        movieRepository.getMovies(page: page, success: { [weak self] (movies) in
             guard let self = self else { return }
             
             if self.movies == nil {

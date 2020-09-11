@@ -8,7 +8,11 @@
 import Foundation
 
 class MovieRepository {
-    static let shared = MovieRepository()
+    let keychainHandler: StoreHandlerProtocol
+    
+    init(keychainHandler: StoreHandlerProtocol) {
+        self.keychainHandler = keychainHandler
+    }
     
     func getMovies(page: Int, success: @escaping([Movie]) -> Void, failure: @escaping(String) -> Void) {
         let parameters: [String: Any] = [
@@ -16,7 +20,7 @@ class MovieRepository {
         ]
         let headers: [String: String] = [
             "Accept": "application/json",
-            "Authorization": "Bearer \(UserDefaults.standard.string(forKey: Constants.Keys.TOKEN) ?? "")"
+            "Authorization": "Bearer \(keychainHandler.string(from: Constants.Keys.TOKEN) ?? "")"
         ]
         
         ResponseHelper.GET(with: .url,

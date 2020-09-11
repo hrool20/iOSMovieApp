@@ -8,7 +8,11 @@
 import Foundation
 
 final class LoginRepository {
-    static let shared = LoginRepository()
+    private let keychainHandler: StoreHandlerProtocol
+    
+    init(keychainHandler: StoreHandlerProtocol) {
+        self.keychainHandler = keychainHandler
+    }
     
     func signIn(email: String, password: String, success: @escaping() -> Void, failure: @escaping(String) -> Void) {
         let parameters: [String: Any] = [
@@ -23,9 +27,10 @@ final class LoginRepository {
                             url: Constants.Service.SIGN_IN,
                             headers: headers,
                             parameters: parameters,
-        success: { (response) in
+        success: { [weak self] (response) in
+            guard let self = self else { return }
             let token = response["token"].stringValue
-            UserDefaults.standard.set(token, forKey: Constants.Keys.TOKEN)
+            self.keychainHandler.save(value: token, to: Constants.Keys.TOKEN)
             success()
         }) { (error) in
             failure(error.localizedDescription)

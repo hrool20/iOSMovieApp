@@ -14,6 +14,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    var loginRepository: LoginRepository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,7 @@ class SignInViewController: UIViewController {
         
         startProgress()
         
-        LoginRepository.shared.signIn(email: email,
+        loginRepository.signIn(email: email,
                                       password: password,
         success: { [weak self] in
             guard let self = self else { return }

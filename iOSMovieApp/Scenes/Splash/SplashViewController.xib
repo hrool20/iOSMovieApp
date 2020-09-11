@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="iOSMovieApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="Movie_App" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="WJJ-6D-Xsi" id="yTV-vR-0Fj"/>
                 <outlet property="logoImageView" destination="cfy-B7-XKN" id="yaw-ZI-lxb"/>
@@ -32,7 +32,7 @@
                                 <constraint firstAttribute="height" constant="220" id="TEC-pJ-uGG"/>
                             </constraints>
                         </imageView>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-6D-Xsi">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-6D-Xsi">
                             <rect key="frame" x="91.5" y="225" width="37" height="37"/>
                             <color key="color" name="TintColor"/>
                         </activityIndicatorView>

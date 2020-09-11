@@ -11,19 +11,21 @@ class SplashViewController: UIViewController {
 
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var keychainHandler: StoreHandlerProtocol!
+    var userDefaultsHandler: StoreHandlerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let isTokenSaved: Bool
         
-        if UserDefaults.standard.bool(forKey: Constants.Keys.WAS_FIRST_OPEN),
-            let _ = UserDefaults.standard.string(forKey: Constants.Keys.TOKEN) {
+        if userDefaultsHandler.bool(from: Constants.Keys.WAS_FIRST_OPEN),
+            let _ = keychainHandler.string(from: Constants.Keys.TOKEN) {
             isTokenSaved = true
         } else {
             isTokenSaved = false
-            UserDefaults.standard.removeObject(forKey: Constants.Keys.TOKEN)
-            UserDefaults.standard.set(true, forKey: Constants.Keys.WAS_FIRST_OPEN)
+            _ = keychainHandler.remove(from: Constants.Keys.TOKEN)
+            userDefaultsHandler.save(value: true, to: Constants.Keys.WAS_FIRST_OPEN)
         }
         
         activityIndicator.startAnimating()
