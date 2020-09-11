@@ -58,8 +58,7 @@ final class Router {
     
     func getSplash() -> UIViewController {
         let viewController = SplashViewController.get()
-        viewController.keychainHandler = keychainHandler
-        viewController.userDefaultsHandler = userDefaultsHandler
+        viewController.splashPresenter = SplashPresenter(keychainHandler: keychainHandler, userDefaultsHandler: userDefaultsHandler, view: viewController)
         return viewController
     }
 }

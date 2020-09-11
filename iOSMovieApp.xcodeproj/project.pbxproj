@@ -47,6 +47,9 @@
 		8E5F6896250B188D0063B754 /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6895250B188D0063B754 /* RouterMock.swift */; };
 		8E5F6898250B21870063B754 /* MovieRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */; };
 		8E5F689A250B2ED20063B754 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8E5F6899250B2ED20063B754 /* README.md */; };
+		8E5F689C250B3AFE0063B754 /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F689B250B3AFE0063B754 /* SplashPresenterProtocol.swift */; };
+		8E5F689E250B3B200063B754 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F689D250B3B200063B754 /* SplashPresenter.swift */; };
+		8E5F68A0250B3B410063B754 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F689F250B3B410063B754 /* SplashViewControllerProtocol.swift */; };
 		8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */; };
 		8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */; };
 		8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD69250B073900331F1B /* KeychainHandler.swift */; };
@@ -120,6 +123,9 @@
 		8E5F6895250B188D0063B754 /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
 		8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositoryTests.swift; sourceTree = "<group>"; };
 		8E5F6899250B2ED20063B754 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8E5F689B250B3AFE0063B754 /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
+		8E5F689D250B3B200063B754 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		8E5F689F250B3B410063B754 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD69250B073900331F1B /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
@@ -240,8 +246,11 @@
 		8E473045250A96C0007D0DD0 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				8E5F689D250B3B200063B754 /* SplashPresenter.swift */,
+				8E5F689B250B3AFE0063B754 /* SplashPresenterProtocol.swift */,
 				8E473046250A96D4007D0DD0 /* SplashViewController.swift */,
 				8E473047250A96D4007D0DD0 /* SplashViewController.xib */,
+				8E5F689F250B3B410063B754 /* SplashViewControllerProtocol.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -660,10 +669,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5233BB25098C2000DEF379 /* Router.swift in Sources */,
+				8E5F689C250B3AFE0063B754 /* SplashPresenterProtocol.swift in Sources */,
+				8E5F689E250B3B200063B754 /* SplashPresenter.swift in Sources */,
 				8E5233D32509C00300DEF379 /* ModelProtocol.swift in Sources */,
 				8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */,
 				8E47304F250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift in Sources */,
 				8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */,
+				8E5F68A0250B3B410063B754 /* SplashViewControllerProtocol.swift in Sources */,
 				8E5233C42509983E00DEF379 /* AlertHandlerProtocol.swift in Sources */,
 				8E5233A7250987D100DEF379 /* ShowMovieDetailViewController.swift in Sources */,
 				8E5233CE2509BB5F00DEF379 /* MovieRepository.swift in Sources */,
