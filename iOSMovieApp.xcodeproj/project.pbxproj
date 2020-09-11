@@ -60,6 +60,9 @@
 		8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */; };
 		8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD69250B073900331F1B /* KeychainHandler.swift */; };
 		8E8DAD6C250B075500331F1B /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD6B250B075500331F1B /* UserDefaultsHandler.swift */; };
+		8ECC8C01250B4AB000E5EE69 /* ListMoviesCollectionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC8C00250B4AB000E5EE69 /* ListMoviesCollectionPresenterProtocol.swift */; };
+		8ECC8C03250B4ADA00E5EE69 /* ListMoviesCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC8C02250B4ADA00E5EE69 /* ListMoviesCollectionPresenter.swift */; };
+		8ECC8C05250B4C4900E5EE69 /* ListMoviesCollectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECC8C04250B4C4900E5EE69 /* ListMoviesCollectionViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,9 @@
 		8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD69250B073900331F1B /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
 		8E8DAD6B250B075500331F1B /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		8ECC8C00250B4AB000E5EE69 /* ListMoviesCollectionPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesCollectionPresenterProtocol.swift; sourceTree = "<group>"; };
+		8ECC8C02250B4ADA00E5EE69 /* ListMoviesCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesCollectionPresenter.swift; sourceTree = "<group>"; };
+		8ECC8C04250B4C4900E5EE69 /* ListMoviesCollectionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesCollectionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		8F23E821843F5EB5A8D5314F /* Pods-iOSMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4084BD07C0E41C84BF7A24 /* Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FF269E77D6BAF3DDA596DF /* Pods-iOSMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp/Pods-iOSMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -330,8 +336,11 @@
 			isa = PBXGroup;
 			children = (
 				8E5233D42509C31E00DEF379 /* Cells */,
+				8ECC8C02250B4ADA00E5EE69 /* ListMoviesCollectionPresenter.swift */,
+				8ECC8C00250B4AB000E5EE69 /* ListMoviesCollectionPresenterProtocol.swift */,
 				8E5233A9250987F200DEF379 /* ListMoviesCollectionViewController.swift */,
 				8E5233AA250987F200DEF379 /* ListMoviesCollectionViewController.xib */,
+				8ECC8C04250B4C4900E5EE69 /* ListMoviesCollectionViewControllerProtocol.swift */,
 			);
 			path = ListMovies;
 			sourceTree = "<group>";
@@ -702,6 +711,7 @@
 				8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */,
 				8E47304B250A9BDF007D0DD0 /* UIColorExtension.swift in Sources */,
 				8E8DAD6C250B075500331F1B /* UserDefaultsHandler.swift in Sources */,
+				8ECC8C05250B4C4900E5EE69 /* ListMoviesCollectionViewControllerProtocol.swift in Sources */,
 				8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */,
 				8E5F68A4250B3EDB0063B754 /* SignInPresenter.swift in Sources */,
 				8E5233AE2509884400DEF379 /* UIViewControllerExtension.swift in Sources */,
@@ -710,6 +720,7 @@
 				8E5233CC2509B5C100DEF379 /* HUDHandlerProtocol.swift in Sources */,
 				8E5F68AC250B45120063B754 /* ShowMovieDetailViewControllerProtocol.swift in Sources */,
 				8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */,
+				8ECC8C01250B4AB000E5EE69 /* ListMoviesCollectionPresenterProtocol.swift in Sources */,
 				8E5233CA25099F8A00DEF379 /* ResponseHelper.swift in Sources */,
 				8E5F68AA250B42850063B754 /* ShowMovieDetailPresenter.swift in Sources */,
 				8E5233AB250987F200DEF379 /* ListMoviesCollectionViewController.swift in Sources */,
@@ -722,6 +733,7 @@
 				8E5233D02509BECA00DEF379 /* Movie.swift in Sources */,
 				8E5F68A6250B3F0B0063B754 /* SignInViewControllerProtocol.swift in Sources */,
 				8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */,
+				8ECC8C03250B4ADA00E5EE69 /* ListMoviesCollectionPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

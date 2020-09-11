@@ -39,8 +39,7 @@ final class Router {
     
     func getListMovies() -> UIViewController {
         let viewController = ListMoviesCollectionViewController.get()
-        viewController.movieRepository = movieRepository
-        viewController.keychainHandler = keychainHandler
+        viewController.listMoviesPresenter = ListMoviesCollectionPresenter(keychainHandler: keychainHandler, movieRepository: movieRepository, view: viewController)
         return viewController
     }
     

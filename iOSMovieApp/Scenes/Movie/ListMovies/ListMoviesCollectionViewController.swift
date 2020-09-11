@@ -13,10 +13,9 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     private var reuseIdentifier: String!
     private var numberOfColumns: CGFloat!
     private var page: Int!
-    private var willFecth: Bool!
+    private var willFetch: Bool!
     private var flowLayout: UICollectionViewFlowLayout!
-    var movieRepository: MovieRepository!
-    var keychainHandler: StoreHandlerProtocol!
+    var listMoviesPresenter: ListMoviesCollectionPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +23,16 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         navigationItem.title = Constants.Localizable.MOVIES
         
         reuseIdentifier = ListMovieCollectionViewCell.reuseIdentifier
-        numberOfColumns = (UIScreen.main.bounds.width < UIScreen.main.bounds.height) ? 3.0 : 5.0
+        numberOfColumns = listMoviesPresenter.getNumberOfColumns()
         page = 1
-        willFecth = true
+        willFetch = true
         flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
         
         collectionView.register(ListMovieCollectionViewCell.getNIB(), forCellWithReuseIdentifier: reuseIdentifier)
         
-        updateFlowLayout()
-        setNavigationItems()
+        navigationItem.setRightBarButtonItems(listMoviesPresenter.getRightNavigationItems(), animated: true)
+        listMoviesPresenter.updateFlowLayout(numberOfColumns: numberOfColumns, flowLayout: flowLayout)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +41,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         
-        listMovies()
+        listMoviesPresenter.loadMovies(page: page)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,56 +54,8 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        numberOfColumns = (UIScreen.main.bounds.width < UIScreen.main.bounds.height) ? 3.0 : 5.0
-        updateFlowLayout()
-    }
-    
-    private func updateFlowLayout() {
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let availableWidth = UIScreen.main.bounds.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right - ((numberOfColumns - 1) * flowLayout.minimumInteritemSpacing)
-        let size = availableWidth / numberOfColumns
-        flowLayout.itemSize = CGSize(width: size.rounded(.towardZero), height: 200)
-    }
-    
-    private func setNavigationItems() {
-        let size = CGSize(width: 30, height: 30)
-        
-        let signOutItem = UIBarButtonItem(image: #imageLiteral(resourceName: "logout").resizeImage(with: size), style: .plain, target: self, action: #selector(didSignOut))
-        navigationItem.setRightBarButtonItems([
-            signOutItem
-        ], animated: true)
-    }
-    
-    @objc private func didSignOut() {
-        showQuestion(.alert, message: Constants.Localizable.SIGN_OUT_QUESTION) { [weak self] (isSuccessful) in
-            guard let self = self, isSuccessful else { return }
-            _ = self.keychainHandler.remove(from: Constants.Keys.TOKEN)
-            let signIn = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getSignIn())
-            self.start([.transitionFlipFromRight], to: signIn)
-        }
-    }
-    
-    private func listMovies() {
-        movieRepository.getMovies(page: page, success: { [weak self] (movies) in
-            guard let self = self else { return }
-            
-            if self.movies == nil {
-                self.movies = [Movie]()
-            }
-            self.willFecth = (!movies.isEmpty) ? true : false
-            self.movies?.append(contentsOf: movies)
-            self.collectionView.reloadData()
-        }) { [weak self] (error) in
-            guard let self = self else { return }
-            
-            if self.movies == nil {
-                self.movies = []
-            }
-            self.willFecth = false
-            self.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
-        }
+        numberOfColumns = listMoviesPresenter.getNumberOfColumns()
+        listMoviesPresenter.updateFlowLayout(numberOfColumns: numberOfColumns, flowLayout: flowLayout)
     }
 
     // MARK: UICollectionViewDataSource
@@ -128,22 +79,37 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let movie = movies?[indexPath.row] else {
+        listMoviesPresenter.didSelect(movie: movies?[indexPath.row])
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard listMoviesPresenter.shouldLoadMoreMovies(totalMovies: movies?.count ?? 0, index: indexPath.row, numberOfColumns: numberOfColumns, willFetch: willFetch) else {
             return
         }
+        page += 1
+        willFetch = false
+        listMoviesPresenter.loadMovies(page: page)
+    }
+
+}
+extension ListMoviesCollectionViewController: ListMoviesCollectionViewControllerProtocol {
+    func loadData(_ willFetch: Bool, _ movies: [Movie]) {
+        if self.movies == nil {
+            self.movies = [Movie]()
+        }
+        self.willFetch = willFetch
+        self.movies?.append(contentsOf: movies)
+        collectionView.reloadData()
+    }
+    
+    func showMovieDetail(_ movie: Movie) {
         let movieDetail = Router.shared.getMovieDetail(movie: movie)
         movieDetail.hidesBottomBarWhenPushed = true
         navigationController?.show(movieDetail, sender: nil)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let count = movies?.count ?? 0
-        guard willFecth && indexPath.row == count - Int(numberOfColumns) else {
-            return
-        }
-        page += 1
-        willFecth = false
-        listMovies()
+    func showSignIn() {
+        let signIn = Router.shared.getDefaultNavigation(rootViewController: Router.shared.getSignIn())
+        self.start([.transitionFlipFromRight], to: signIn)
     }
-
 }
