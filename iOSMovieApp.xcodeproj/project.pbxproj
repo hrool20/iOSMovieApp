@@ -44,6 +44,9 @@
 		8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */; };
 		8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233D92509CE2100DEF379 /* UIViewExtension.swift */; };
 		8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */; };
+		8E5F6894250B13630063B754 /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6893250B13630063B754 /* LoginRepositoryTests.swift */; };
+		8E5F6896250B188D0063B754 /* RouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6895250B188D0063B754 /* RouterMock.swift */; };
+		8E5F6898250B21870063B754 /* MovieRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */; };
 		8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */; };
 		8E8DAD68250B060100331F1B /* StoreHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */; };
 		8E8DAD6A250B073900331F1B /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD69250B073900331F1B /* KeychainHandler.swift */; };
@@ -114,6 +117,9 @@
 		8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		8E5233D92509CE2100DEF379 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		8E5F6893250B13630063B754 /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
+		8E5F6895250B188D0063B754 /* RouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMock.swift; sourceTree = "<group>"; };
+		8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepositoryTests.swift; sourceTree = "<group>"; };
 		8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		8E8DAD67250B060100331F1B /* StoreHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHandlerProtocol.swift; sourceTree = "<group>"; };
 		8E8DAD69250B073900331F1B /* KeychainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHandler.swift; sourceTree = "<group>"; };
@@ -214,8 +220,10 @@
 		8E447637250982480021285D /* iOSMovieAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E5F6890250B120F0063B754 /* Repositories */,
 				8E447638250982480021285D /* iOSMovieAppTests.swift */,
 				8E44763A250982480021285D /* Info.plist */,
+				8E5F6895250B188D0063B754 /* RouterMock.swift */,
 			);
 			path = iOSMovieAppTests;
 			sourceTree = "<group>";
@@ -383,6 +391,15 @@
 				8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8E5F6890250B120F0063B754 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8E5F6893250B13630063B754 /* LoginRepositoryTests.swift */,
+				8E5F6897250B21870063B754 /* MovieRepositoryTests.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		8E8DAD66250B05E200331F1B /* Store */ = {
@@ -675,7 +692,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5F6898250B21870063B754 /* MovieRepositoryTests.swift in Sources */,
+				8E5F6896250B188D0063B754 /* RouterMock.swift in Sources */,
 				8E447639250982480021285D /* iOSMovieAppTests.swift in Sources */,
+				8E5F6894250B13630063B754 /* LoginRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

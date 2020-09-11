@@ -15,6 +15,10 @@ final class KeychainHandler: StoreHandlerProtocol {
         suiteName = Bundle.main.bundleIdentifier ?? ""
     }
     
+    init(suiteName: String) {
+        self.suiteName = suiteName
+    }
+    
     func array<T>(of type: T.Type, from key: String) -> [T]? {
         // TODO: Find a way
         return [T]()

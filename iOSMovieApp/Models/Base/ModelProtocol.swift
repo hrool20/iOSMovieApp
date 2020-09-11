@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-protocol ModelProtocol: Codable {
+protocol ModelProtocol: Equatable, Codable {
     init(fromJSONObject jsonObject: JSON)
 }
 extension ModelProtocol {

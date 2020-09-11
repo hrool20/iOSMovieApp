@@ -27,4 +27,8 @@ class Movie: ModelProtocol {
                   description: jsonObject["detail"]["description"].stringValue,
                   imageUrl: jsonObject["detail"]["img"].stringValue)
     }
+    
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

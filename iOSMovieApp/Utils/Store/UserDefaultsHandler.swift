@@ -11,7 +11,14 @@ final class UserDefaultsHandler: StoreHandlerProtocol {
     let userDefaults: UserDefaults
     
     init() {
-        self.userDefaults = .standard
+        userDefaults = .standard
+    }
+    
+    init(suiteName: String) {
+        guard let userDefaults = UserDefaults(suiteName: suiteName) else {
+            fatalError("Suite name is not correct")
+        }
+        self.userDefaults = userDefaults
     }
     
     func array<T>(of type: T.Type, from key: String) -> [T]? {
