@@ -13,7 +13,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     private var reuseIdentifier: String!
     private var numberOfColumns: CGFloat!
     private var page: Int!
-    private var willFecth: Bool!
+    private var willFetch: Bool!
     private var flowLayout: UICollectionViewFlowLayout!
     var movieRepository: MovieRepository!
     var keychainHandler: StoreHandlerProtocol!
@@ -26,7 +26,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         reuseIdentifier = ListMovieCollectionViewCell.reuseIdentifier
         numberOfColumns = (UIScreen.main.bounds.width < UIScreen.main.bounds.height) ? 3.0 : 5.0
         page = 1
-        willFecth = true
+        willFetch = true
         flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
         
@@ -93,7 +93,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
             if self.movies == nil {
                 self.movies = [Movie]()
             }
-            self.willFecth = (!movies.isEmpty) ? true : false
+            self.willFetch = (!movies.isEmpty) ? true : false
             self.movies?.append(contentsOf: movies)
             self.collectionView.reloadData()
         }) { [weak self] (error) in
@@ -102,7 +102,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
             if self.movies == nil {
                 self.movies = []
             }
-            self.willFecth = false
+            self.willFetch = false
             self.show(.alert, message: Constants.Localizable.DEFAULT_ERROR_MESSAGE)
         }
     }
@@ -138,11 +138,11 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let count = movies?.count ?? 0
-        guard willFecth && indexPath.row == count - Int(numberOfColumns) else {
+        guard willFetch && indexPath.row == count - Int(numberOfColumns) else {
             return
         }
         page += 1
-        willFecth = false
+        willFetch = false
         listMovies()
     }
 
