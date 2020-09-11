@@ -26,10 +26,6 @@ class ShowMovieDetailViewController: UIViewController {
         navigationItem.title = Constants.Localizable.MOVIE_DETAIL
         
         gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [
-            UIColor.clear.cgColor,
-            UIColor.tintColor?.cgColor ?? UIColor.clear.cgColor
-        ]
         gradientLayer.locations = [0.35, 1.1]
         movieImageView.layer.insertSublayer(gradientLayer, at: 0)
         
@@ -62,6 +58,10 @@ class ShowMovieDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        gradientLayer.colors = [
+            UIColor.clear.cgColor,
+            UIColor.tintColor?.cgColor ?? UIColor.clear.cgColor
+        ]
         gradientLayer.frame = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: movieImageView.bounds.height))
         movieImageView.layer.cornerRadius = movieImageView.bounds.width / 20
         movieImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
