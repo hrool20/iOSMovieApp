@@ -22,9 +22,6 @@ class SignInViewController: UIViewController {
         emailTextField.placeholder = Constants.Localizable.EMAIL
         passwordTextField.placeholder = Constants.Localizable.PASSWORD
         signInButton.setTitle(Constants.Localizable.SIG_IN, for: .normal)
-        
-        emailTextField.text = "peruapps0@peruapps.com"
-        passwordTextField.text = "password0"
     }
     
     override func viewWillAppear(_ animated: Bool) {
