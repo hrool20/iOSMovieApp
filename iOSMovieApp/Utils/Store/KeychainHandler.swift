@@ -9,7 +9,7 @@ import Foundation
 import Security
 
 final class KeychainHandler: StoreHandlerProtocol {
-    let suiteName: String
+    private let suiteName: String
     
     init() {
         suiteName = Bundle.main.bundleIdentifier ?? ""
