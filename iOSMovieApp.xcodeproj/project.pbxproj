@@ -44,6 +44,7 @@
 		8E5233D82509C3F900DEF379 /* ListMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */; };
 		8E5233DA2509CE2100DEF379 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233D92509CE2100DEF379 /* UIViewExtension.swift */; };
 		8E5233DC2509D28600DEF379 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */; };
+		8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,7 @@
 		383E591A49DCF2DEA80A9215 /* Pods-iOSMovieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		750AAFA24D6666B3CAC27FF6 /* Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB0D673217BAC012B84D536 /* Pods_iOSMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSMovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E44761B250982410021285D /* iOSMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E44761B250982410021285D /* Movie App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E44761E250982410021285D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E447628250982410021285D /* iOSMovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSMovieApp.xcdatamodel; sourceTree = "<group>"; };
 		8E44762A250982480021285D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		8E5233D62509C3F900DEF379 /* ListMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		8E5233D92509CE2100DEF379 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		8F23E821843F5EB5A8D5314F /* Pods-iOSMovieAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4084BD07C0E41C84BF7A24 /* Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1FF269E77D6BAF3DDA596DF /* Pods-iOSMovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp.debug.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp/Pods-iOSMovieApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,7 +184,7 @@
 		8E44761C250982410021285D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E44761B250982410021285D /* iOSMovieApp.app */,
+				8E44761B250982410021285D /* Movie App.app */,
 				8E447634250982480021285D /* iOSMovieAppTests.xctest */,
 				8E44763F250982480021285D /* iOSMovieAppUITests.xctest */,
 			);
@@ -237,6 +239,7 @@
 				8E47304E250AA9A8007D0DD0 /* UIColorExtension+CustomColors.swift */,
 				8E473050250AAE11007D0DD0 /* UIImageExtension.swift */,
 				8E5233DB2509D28600DEF379 /* UIImageViewExtension.swift */,
+				8E8DAD5B250AF01100331F1B /* UINavigationControllerExtension.swift */,
 				8E5233AD2509884400DEF379 /* UIViewControllerExtension.swift */,
 				8E5233D92509CE2100DEF379 /* UIViewExtension.swift */,
 			);
@@ -394,7 +397,7 @@
 			);
 			name = iOSMovieApp;
 			productName = iOSMovieApp;
-			productReference = 8E44761B250982410021285D /* iOSMovieApp.app */;
+			productReference = 8E44761B250982410021285D /* Movie App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8E447633250982480021285D /* iOSMovieAppTests */ = {
@@ -644,6 +647,7 @@
 				8E5233A3250987B700DEF379 /* SignInViewController.swift in Sources */,
 				8E5233C0250992C300DEF379 /* Constants.swift in Sources */,
 				8E5233D02509BECA00DEF379 /* Movie.swift in Sources */,
+				8E8DAD5C250AF01100331F1B /* UINavigationControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,7 +835,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pe.hrool.iOSMovieApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Movie App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -853,7 +857,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pe.hrool.iOSMovieApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Movie App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

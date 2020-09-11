@@ -5,6 +5,19 @@
   Copyright © 2020 Hrool. All rights reserved.
 */
 
+"Movie App" = "Movie App";
+
+"There was a problem, please try later" = "There was a problem, please try later";
 "Email" = "Email";
+"Email field is not valid" = "Email field is not valid";
+"Login" = "Login";
+"Movies" = "Movies";
+"Movie detail" = "Movie detail";
+"No" = "No";
+"Ok" = "Ok";
 "Password" = "Password";
+"Password field is not valid" = "Password field is not valid";
 "Sign in" = "Sign in";
+"Do you want to sign out?" = "Do you want to sign out?";
+"Some fields empty" = "Some fields empty";
+"Yes" = "Yes";

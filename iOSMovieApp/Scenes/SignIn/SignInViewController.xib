@@ -54,6 +54,9 @@
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="360" id="qMl-aX-HJ2"/>
+                                    </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhz-5D-JCA">
                                     <rect key="frame" x="154.5" y="492.5" width="105" height="44"/>
@@ -69,13 +72,16 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="Du2-US-Tlg" firstAttribute="leading" secondItem="llY-pB-CSr" secondAttribute="leading" constant="30" id="4Z4-kB-LFz"/>
-                                <constraint firstItem="Du2-US-Tlg" firstAttribute="centerY" secondItem="llY-pB-CSr" secondAttribute="centerY" id="7fj-D8-GFH"/>
-                                <constraint firstItem="UJk-kZ-9K8" firstAttribute="centerX" secondItem="llY-pB-CSr" secondAttribute="centerX" id="Feo-Il-6Db"/>
-                                <constraint firstAttribute="trailing" secondItem="Du2-US-Tlg" secondAttribute="trailing" constant="30" id="RyR-U5-5ke"/>
+                                <constraint firstItem="UJk-kZ-9K8" firstAttribute="centerX" secondItem="Du2-US-Tlg" secondAttribute="centerX" id="0Iv-gh-kgy"/>
+                                <constraint firstItem="Du2-US-Tlg" firstAttribute="leading" secondItem="llY-pB-CSr" secondAttribute="leading" priority="750" constant="30" id="4Z4-kB-LFz"/>
+                                <constraint firstItem="Du2-US-Tlg" firstAttribute="centerY" secondItem="llY-pB-CSr" secondAttribute="centerY" priority="250" id="7fj-D8-GFH"/>
+                                <constraint firstAttribute="trailing" secondItem="Du2-US-Tlg" secondAttribute="trailing" priority="750" constant="30" id="RyR-U5-5ke"/>
+                                <constraint firstItem="Du2-US-Tlg" firstAttribute="centerX" secondItem="llY-pB-CSr" secondAttribute="centerX" id="SGg-I0-28O"/>
                                 <constraint firstItem="Du2-US-Tlg" firstAttribute="top" secondItem="UJk-kZ-9K8" secondAttribute="bottom" constant="35" id="VxC-7S-502"/>
                                 <constraint firstItem="Xhz-5D-JCA" firstAttribute="top" secondItem="Du2-US-Tlg" secondAttribute="bottom" constant="20" id="Xrp-6p-QBs"/>
-                                <constraint firstItem="Xhz-5D-JCA" firstAttribute="centerX" secondItem="llY-pB-CSr" secondAttribute="centerX" id="bCW-nQ-uaH"/>
+                                <constraint firstItem="Xhz-5D-JCA" firstAttribute="centerX" secondItem="Du2-US-Tlg" secondAttribute="centerX" id="bdu-vd-nAd"/>
+                                <constraint firstItem="UJk-kZ-9K8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="llY-pB-CSr" secondAttribute="top" constant="10" id="dbp-01-d2F"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xhz-5D-JCA" secondAttribute="bottom" constant="20" id="riI-EP-bw8"/>
                             </constraints>
                         </view>
                     </subviews>

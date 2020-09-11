@@ -14,16 +14,17 @@ class ShowMovieDetailViewController: UIViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var descriptionTextView: UITextView!
-    private var navigationBarTintColor: UIColor?
     private var gradientLayer: CAGradientLayer!
     var movie: Movie!
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Localizable.MOVIE_DETAIL
         
-        navigationBarTintColor = navigationController?.navigationBar.tintColor
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor.clear.cgColor,
@@ -44,33 +45,29 @@ class ShowMovieDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.barStyle = .blackTranslucent
-        updateTitledColor(with: 1.0)
+        updateTitleColor(with: 1.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = nil
-        navigationController?.navigationBar.tintColor = navigationBarTintColor
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = nil
-        navigationController?.navigationBar.barStyle = .default
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        gradientLayer.frame = movieImageView.bounds
+        gradientLayer.frame = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width, height: movieImageView.bounds.height))
         movieImageView.layer.cornerRadius = movieImageView.bounds.width / 20
         movieImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    private func updateTitledColor(with alpha: CGFloat) {
+    private func updateTitleColor(with alpha: CGFloat) {
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white.withAlphaComponent(alpha)
         ]
@@ -90,6 +87,6 @@ extension ShowMovieDetailViewController: UIScrollViewDelegate {
         } else {
             alpha = 1
         }
-        updateTitledColor(with: alpha)
+        updateTitleColor(with: alpha)
     }
 }

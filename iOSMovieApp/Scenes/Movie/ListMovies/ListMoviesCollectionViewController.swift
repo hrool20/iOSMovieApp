@@ -14,6 +14,7 @@ class ListMoviesCollectionViewController: UICollectionViewController {
     private var numberOfColumns: CGFloat!
     private var page: Int!
     private var willFecth: Bool!
+    private var flowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +22,15 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         navigationItem.title = Constants.Localizable.MOVIES
         
         reuseIdentifier = ListMovieCollectionViewCell.reuseIdentifier
-        numberOfColumns = 3.0
+        numberOfColumns = (UIScreen.main.bounds.width < UIScreen.main.bounds.height) ? 3.0 : 5.0
         page = 1
         willFecth = true
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        flowLayout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = flowLayout
         
         collectionView.register(ListMovieCollectionViewCell.getNIB(), forCellWithReuseIdentifier: reuseIdentifier)
         
+        updateFlowLayout()
         setNavigationItems()
     }
     
@@ -50,6 +48,22 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.topItem?.backBarButtonItem = nil
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        numberOfColumns = (UIScreen.main.bounds.width < UIScreen.main.bounds.height) ? 3.0 : 5.0
+        updateFlowLayout()
+    }
+    
+    private func updateFlowLayout() {
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let availableWidth = UIScreen.main.bounds.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right - ((numberOfColumns - 1) * flowLayout.minimumInteritemSpacing)
+        let size = availableWidth / numberOfColumns
+        flowLayout.itemSize = CGSize(width: size.rounded(.towardZero), height: 200)
     }
     
     private func setNavigationItems() {
@@ -126,20 +140,9 @@ class ListMoviesCollectionViewController: UICollectionViewController {
         guard willFecth && indexPath.row == count - Int(numberOfColumns) else {
             return
         }
-        print("##PG: \(page)")
         page += 1
         willFecth = false
         listMovies()
     }
-    
-    // MARK: UICollectionViewDelegateFlowLayout
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-        
-        let availableWidth = UIScreen.main.bounds.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right - ((numberOfColumns - 1) * flowLayout.minimumInteritemSpacing)
-        let size = availableWidth / numberOfColumns
-        return CGSize(width: size.rounded(.towardZero), height: 200)
-    }
+
 }
-extension ListMoviesCollectionViewController: UICollectionViewDelegateFlowLayout {}

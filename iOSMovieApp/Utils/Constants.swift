@@ -29,8 +29,6 @@ struct Constants {
         static let SIGN_OUT_QUESTION: String = NSLocalizedString("Do you want to sign out?", comment: "")
         static let SOME_FIELDS_EMPTY = NSLocalizedString("Some fields empty", comment: "")
         static let YES = NSLocalizedString("Yes", comment: "")
-        
-        static let A = NSLocalizedString("Sign", comment: "")
     }
     struct Service {
         #if DEBUG
