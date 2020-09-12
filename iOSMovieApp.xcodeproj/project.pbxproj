@@ -10,6 +10,7 @@
 		3B7751EB3E437E42542A1A59 /* Pods_iOSMovieApp_iOSMovieAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD966B76ED3DD792001638AB /* Pods_iOSMovieApp_iOSMovieAppUITests.framework */; };
 		48B12318923FD205E5AE7576 /* Pods_iOSMovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0D673217BAC012B84D536 /* Pods_iOSMovieApp.framework */; };
 		88F5550C7B6E8DAF13067542 /* Pods_iOSMovieAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1063AC900381C380CDBA6A /* Pods_iOSMovieAppTests.framework */; };
+		8E3F2D0D250C555A006B10B4 /* ListMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F2D0C250C555A006B10B4 /* ListMoviesUITests.swift */; };
 		8E44761F250982410021285D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E44761E250982410021285D /* AppDelegate.swift */; };
 		8E447629250982410021285D /* iOSMovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E447627250982410021285D /* iOSMovieApp.xcdatamodeld */; };
 		8E44762B250982480021285D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E44762A250982480021285D /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		383E591A49DCF2DEA80A9215 /* Pods-iOSMovieAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieAppTests.release.xcconfig"; path = "Target Support Files/Pods-iOSMovieAppTests/Pods-iOSMovieAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		750AAFA24D6666B3CAC27FF6 /* Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSMovieApp-iOSMovieAppUITests/Pods-iOSMovieApp-iOSMovieAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB0D673217BAC012B84D536 /* Pods_iOSMovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSMovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E3F2D0C250C555A006B10B4 /* ListMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoviesUITests.swift; sourceTree = "<group>"; };
 		8E44761B250982410021285D /* Movie App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E44761E250982410021285D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E447628250982410021285D /* iOSMovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSMovieApp.xcdatamodel; sourceTree = "<group>"; };
@@ -181,6 +183,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8E3F2D09250C550E006B10B4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8E3F2D0A250C5519006B10B4 /* Movie */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8E3F2D0A250C5519006B10B4 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				8E3F2D0B250C552C006B10B4 /* ListMovies */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		8E3F2D0B250C552C006B10B4 /* ListMovies */ = {
+			isa = PBXGroup;
+			children = (
+				8E3F2D0C250C555A006B10B4 /* ListMoviesUITests.swift */,
+			);
+			path = ListMovies;
+			sourceTree = "<group>";
+		};
 		8E447612250982410021285D = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +257,7 @@
 		8E447642250982480021285D /* iOSMovieAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8E3F2D09250C550E006B10B4 /* Scenes */,
 				8E447643250982480021285D /* iOSMovieAppUITests.swift */,
 				8E447645250982480021285D /* Info.plist */,
 			);
@@ -703,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3F2D0D250C555A006B10B4 /* ListMoviesUITests.swift in Sources */,
 				8E447644250982480021285D /* iOSMovieAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
